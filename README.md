@@ -32,7 +32,7 @@ $paymentUrl = $senangPay->createPayment(
 
 #### Note
 
-:bangbang: This library is not tested as author does not have senangPay account. 
+:bangbang: This library is not tested as author does not have senangPay account. :bangbang:
 
 ##### License
 MIT

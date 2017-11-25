@@ -1,0 +1,20 @@
+{
+    "name": "h2akim/senangpay-php",
+    "description": "SenangPay Payment Gateway PHP Library (unofficial)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hakim Razalan",
+            "email": "akimrr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":
+        {
+            "SenangPay\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}

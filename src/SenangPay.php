@@ -42,6 +42,16 @@ class SenangPay
     }
 
     /**
+     * Get Merchant Id
+     *
+     * @return string|null
+     **/
+    public function getMerchantId()
+    {
+        return $this->merchantId;
+    }
+
+    /**
      * Generate senangPay Payment URL
      *
      * @param Object $params Parameters for senangPay Payment URL
@@ -88,12 +98,26 @@ class SenangPay
     }
 
     /**
-     * Get Merchant Id
+     * callback function for callback url
      *
-     * @return string|null
+     * @param Type $var Description
+     * @return bool
      **/
-    public function getMerchantId()
+    public function callback(array $data = [])
     {
-        return $this->merchantId;
+        $statusId = urldecode($data['status_id']);
+        $orderId = urldecode($data['order_id']);
+        $msg = urldecode($data['msg']);
+        $transactionId = urldecode($data['transaction_id']);
+        $hash = urldecode($data['hash']);
+
+        $hashString = md5($this->secretKey.$statusId.$orderId.$transactionId.$msg);
+
+        if ($hashString == $hash) {
+            unset($data['hash']);
+            return $data;
+        } else {
+            return [];
+        }
     }
 }

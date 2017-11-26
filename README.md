@@ -2,7 +2,7 @@
 
 #### Installation
 ```bash
-composer require h2akim/senangpay-php
+composer require h2akim/senangpay-php:dev-master
 ```
 
 

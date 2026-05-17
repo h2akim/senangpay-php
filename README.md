@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-composer require php-http/guzzle7-adapter h2akim/senangpay-php:dev-master
+composer require php-http/guzzle7-adapter h2akim/senangpay-php
 ```
 
 #### HTTP Adapter

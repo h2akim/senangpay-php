@@ -2,6 +2,9 @@
 
 namespace SenangPay;
 
+/**
+ * @deprecated Use Client::makeOpenApi() instead.
+ */
 class SenangPay
 {
     /**

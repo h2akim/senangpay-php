@@ -1,20 +1,22 @@
 <?php
 
 require "vendor/autoload.php";
-use SenangPay\SenangPay;
 
-$merchantId = '848144282051638';
-$secretKey = '491-308';
+use SenangPay\Client;
+use SenangPay\Config;
 
-$senangPay = new SenangPay($merchantId, $secretKey);
-$paymentUrl = $senangPay->createPayment(
+$config = Config::make('848144282051638', '491-308');
+$openApi = Client::makeOpenApi($config);
+
+$paymentUrl = $openApi->payment()->createUrl(
     'Shopping_cart_id_30',
-    24.50,
-    56,
+    '24.50',
+    '56',
     [
         'name' => 'Testing User',
         'email' => 'email@testing.com',
-        'phone' => '011223344'
+        'phone' => '011223344',
     ]
 );
-echo $paymentUrl;
+
+echo $paymentUrl . PHP_EOL;
